@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alex Doe | IT Professional</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
@@ -95,6 +95,41 @@
       background: var(--primary-blue);
     }
 
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .blog-post {
+      background: var(--dark-bg);
+      color: var(--text-light);
+      padding: 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .blog-post:hover {
+      background: var(--secondary-pink);
+    }
+
+    .blog-post h3 {
+      margin-bottom: 8px;
+      color: var(--light-bg);
+    }
+
+    .blog-post .date {
+      font-size: 0.9rem;
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+    }
+
+    .blog-post p {
+      font-size: 1rem;
+      color: var(--light-bg);
+    }
+
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -133,6 +168,17 @@
       padding: 15px;
       margin-top: 40px;
     }
+
+    /* Responsive Nav for smaller screens */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -142,6 +188,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -169,12 +216,20 @@
     </div>
   </section>
 
+  <section id="blog">
+    <h2>Blog</h2>
+    <div class="blog-list" id="blog-list">
+      <!-- Blog posts will be rendered here by JS -->
+    </div>
+  </section>
+
   <section id="contact">
     <h2>Contact Me</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
+    <!-- Replace YOUR_FORM_ID with your actual Formspree ID -->
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
@@ -182,5 +237,49 @@
   <footer>
     &copy; 2025 Alex Doe | All Rights Reserved
   </footer>
+
+  <script>
+    // Sample blog posts data - add or modify these as you like
+    const blogPosts = [
+      {
+        id: 'terraform-vs-cloudformation',
+        title: 'Terraform vs. CloudFormation: Which to Choose?',
+        date: 'July 10, 2025',
+        excerpt: 'Comparing the two major infrastructure as code tools to help you decide which fits your projects best.',
+        url: 'blog/terraform-vs-cloudformation.html'
+      },
+      {
+        id: 'cloud-security-pitfalls',
+        title: 'Top 5 Cloud Security Pitfalls—and How to Avoid Them',
+        date: 'June 22, 2025',
+        excerpt: 'Learn about common mistakes in cloud security and practical tips to keep your data safe.',
+        url: 'blog/cloud-security-pitfalls.html'
+      },
+      {
+        id: 'automating-ci-cd-pipelines',
+        title: 'Automating CI/CD Pipelines with Jenkins',
+        date: 'May 15, 2025',
+        excerpt: 'A beginner’s guide to setting up continuous integration and deployment pipelines using Jenkins.',
+        url: 'blog/automating-ci-cd-pipelines.html'
+      }
+    ];
+
+    // Function to render blog posts in #blog-list
+    function renderBlogPosts() {
+      const blogList = document.getElementById('blog-list');
+      blogPosts.forEach(post => {
+        const postEl = document.createElement('article');
+        postEl.classList.add('blog-post');
+        postEl.innerHTML = `
+          <h3><a href="${post.url}" style="color:inherit; text-decoration:none;">${post.title}</a></h3>
+          <div class="date">${post.date}</div>
+          <p>${post.excerpt}</p>
+        `;
+        blogList.appendChild(postEl);
+      });
+    }
+
+    renderBlogPosts();
+  </script>
 </body>
 </html>
