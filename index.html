@@ -1,285 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alex Doe | IT Professional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary-blue: #2563eb;
-      --secondary-pink: #ec4899;
-      --dark-bg: #1e293b;
-      --light-bg: #f1f5f9;
-      --text-light: #f8fafc;
-      --text-dark: #1f2937;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    body {
-      background-color: var(--light-bg);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--dark-bg);
-      color: var(--text-light);
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      color: var(--secondary-pink);
-      font-weight: 500;
-    }
-
-    nav {
-      margin-top: 15px;
-    }
-
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--secondary-pink);
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      color: var(--primary-blue);
-      font-size: 2rem;
-      margin-bottom: 20px;
-      border-bottom: 3px solid var(--secondary-pink);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      background: var(--dark-bg);
-      color: var(--text-light);
-      border-radius: 8px;
-      padding: 20px;
-      transition: transform 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      background: var(--primary-blue);
-    }
-
-    .blog-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .blog-post {
-      background: var(--dark-bg);
-      color: var(--text-light);
-      padding: 20px;
-      border-radius: 8px;
-      transition: background 0.3s;
-      cursor: pointer;
-    }
-
-    .blog-post:hover {
-      background: var(--secondary-pink);
-    }
-
-    .blog-post h3 {
-      margin-bottom: 8px;
-      color: var(--light-bg);
-    }
-
-    .blog-post .date {
-      font-size: 0.9rem;
-      color: var(--primary-blue);
-      margin-bottom: 10px;
-    }
-
-    .blog-post p {
-      font-size: 1rem;
-      color: var(--light-bg);
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      margin-bottom: 15px;
-      padding: 10px;
-      border: 2px solid var(--primary-blue);
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    .contact-form button {
-      background: var(--secondary-pink);
-      color: var(--text-light);
-      border: none;
-      padding: 10px;
-      font-size: 1.1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .contact-form button:hover {
-      background: var(--primary-blue);
-    }
-
-    footer {
-      background: var(--dark-bg);
-      color: var(--text-light);
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-
-    /* Responsive Nav for smaller screens */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <style>
+        footer {
+        width: 100%;
+        height: 28px;
+        border-top: 1px solid #E0E0E0;
+        position: absolute;
+        bottom: 0px; 
+        left: 0px; 
+        text-align: center; 
+        }
+    </style>
 </head>
+<html>
+<h1>
+    Thank you for calling the IT Service Desk this is Boris!
+</h1>
 <body>
-  <header>
-    <h1>Alex Doe</h1>
-    <p>IT Solutions Architect | Cloud & DevOps Enthusiast</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <h2>
+        About Me
+    </h2>
+    <p>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m Alex Doe, an IT professional specializing in cloud infrastructure and DevOps practices. I love building scalable solutions and automating workflows to help businesses innovate efficiently.</p>
-  </section>
+        I am a person who loves to learn all things IT. Forever a student never a master.<br /><br /> 
+        <a href="about.html"> Read more about me! </a>
+    </p>
+    <h2>
+        What I am working on
+    </h2>
+    <p>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Cloud Migration</h3>
-        <p>Led a cloud migration for a FinTech company, achieving 35% cost savings using AWS and Terraform.</p>
-      </div>
-      <div class="project-card">
-        <h3>DevOps Pipeline</h3>
-        <p>Built CI/CD pipelines with Jenkins and Kubernetes, reducing deployment times by 50%.</p>
-      </div>
-      <div class="project-card">
-        <h3>Security Audit</h3>
-        <p>Performed security assessments and implemented SOC processes for enterprise environments.</p>
-      </div>
-    </div>
-  </section>
+        I am currently working on finishing my Bachelors in Cybersecurity through WGU <br /><br />
 
-  <section id="blog">
-    <h2>Blog</h2>
-    <div class="blog-list" id="blog-list">
-      <!-- Blog posts will be rendered here by JS -->
-    </div>
-  </section>
+        I am also working on reconfiguring my network in order to launch a home lab. <br /><br/>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <!-- Replace YOUR_FORM_ID with your actual Formspree ID -->
-    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+        <a href="blog.html"> Read more on my Blog! </a>
 
-  <footer>
-    &copy; 2025 Alex Doe | All Rights Reserved
-  </footer>
+    </p>
 
-  <script>
-    // Sample blog posts data - add or modify these as you like
-    const blogPosts = [
-      {
-        id: 'terraform-vs-cloudformation',
-        title: 'Terraform vs. CloudFormation: Which to Choose?',
-        date: 'July 10, 2025',
-        excerpt: 'Comparing the two major infrastructure as code tools to help you decide which fits your projects best.',
-        url: 'blog/terraform-vs-cloudformation.html'
-      },
-      {
-        id: 'cloud-security-pitfalls',
-        title: 'Top 5 Cloud Security Pitfalls—and How to Avoid Them',
-        date: 'June 22, 2025',
-        excerpt: 'Learn about common mistakes in cloud security and practical tips to keep your data safe.',
-        url: 'blog/cloud-security-pitfalls.html'
-      },
-      {
-        id: 'automating-ci-cd-pipelines',
-        title: 'Automating CI/CD Pipelines with Jenkins',
-        date: 'May 15, 2025',
-        excerpt: 'A beginner’s guide to setting up continuous integration and deployment pipelines using Jenkins.',
-        url: 'blog/automating-ci-cd-pipelines.html'
-      }
-    ];
 
-    // Function to render blog posts in #blog-list
-    function renderBlogPosts() {
-      const blogList = document.getElementById('blog-list');
-      blogPosts.forEach(post => {
-        const postEl = document.createElement('article');
-        postEl.classList.add('blog-post');
-        postEl.innerHTML = `
-          <h3><a href="${post.url}" style="color:inherit; text-decoration:none;">${post.title}</a></h3>
-          <div class="date">${post.date}</div>
-          <p>${post.excerpt}</p>
-        `;
-        blogList.appendChild(postEl);
-      });
-    }
-
-    renderBlogPosts();
-  </script>
+<footer>
+    &copy; 2025 Boris Cochajil | All Rights Reserved
+</footer>
 </body>
 </html>
